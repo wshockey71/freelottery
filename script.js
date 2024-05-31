@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
-    const adVideo = document.getElementById('ad-video');
+    const video = document.getElementById('filler-video');
     const submitButton = form.querySelector('button[type="submit"]');
 
-    // Enable the submit button after the ad video ends
-    adVideo.addEventListener('ended', () => {
+    // Enable the submit button after the video ends
+    video.addEventListener('ended', () => {
         submitButton.disabled = false;
-        alert('Thank you for watching the ad. You can now submit the form.');
+        alert('Thank you for watching the video. You can now submit the form.');
     });
 
     // Handle form submission
