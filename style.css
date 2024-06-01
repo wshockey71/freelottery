@@ -41,9 +41,13 @@ footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    position: relative; /* Change to relative to avoid fixed position */
     width: 100%;
     bottom: 0;
+}
+
+#contact {
+    margin-bottom: 100px; /* Add margin to the bottom of the contact section */
 }
 
 form {
