@@ -13,15 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-
-        if (name && email) {
-            alert(`Thank you, ${name}! Your email ${email} has been received.`);
-            form.reset();
-            submitButton.disabled = true;  // Re-disable the submit button
-        } else {
-            alert('Please fill out all fields.');
-        }
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Thank you for your submission!');
+                form.reset();
+                submitButton.disabled = true;  // Re-disable the submit button
+            } else {
+                alert('Oops! There was a problem with your submission.');
+            }
+        }).catch(error => {
+            alert('Oops! There was a problem with your submission.');
+        });
     });
 });
