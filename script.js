@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
+        const company = document.getElementById('company').value;
+        if (company.trim().toLowerCase() !== 'expected company name') {
+            alert('Incorrect answer for the advertisement question.');
+            return;
+        }
+
         const formData = new FormData(form);
         fetch(form.action, {
             method: 'POST',
