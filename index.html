@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DO<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,9 +24,15 @@
         <section id="contact">
             <h2>Enter Form</h2>
             <p>If you do not get the first question right, you will not be entered.</p>
-            <form id="contact-form" action="https://formspree.io/f/mbjnvgrp" method="POST">
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxBsgOMsDNc8YCxRRmebu8e7YXzYmU9F4gaVgTbA7m2NVg5z7Pn5tJaIf83DoCrjcFB3w/exec" method="POST">
                 <label for="company">What company was the advertisement for?</label>
-                <input type="text" id="company" name="company" required>
+                <select id="company" name="company" required>
+                    <option value="">Select an option</option>
+                    <option value="Coke">Coke</option>
+                    <option value="Pepsi">Pepsi</option>
+                    <option value="Sprite">Sprite</option>
+                    <option value="Fanta">Fanta</option>
+                </select>
                 <br>
                 <label for="ad-feedback">Did you like the ad?</label>
                 <select id="ad-feedback" name="ad-feedback" required>
@@ -54,4 +60,3 @@
     <script src="script.js"></script>
 </body>
 </html>
- 

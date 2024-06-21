@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const company = document.getElementById('company').value;
-        if (company.trim().toLowerCase() !== 'expected company name') {
+        const correctAnswer = 'Coke'; // Correct answer for the advertisement question
+        if (company.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
             alert('Incorrect answer for the advertisement question.');
             return;
         }
