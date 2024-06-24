@@ -1,20 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
-    const video = document.getElementById('filler-video');
     const submitButton = form.querySelector('button[type="submit"]');
-
-    // Enable the submit button after the video ends
-    video.addEventListener('ended', () => {
-        submitButton.disabled = false;
-        alert('Thank you for watching the video. You can now submit the form.');
-    });
+    const correctAnswer = 'Coke'; // Correct answer for the advertisement question
 
     // Handle form submission
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         const company = document.getElementById('company').value;
-        const correctAnswer = 'Coke'; // Correct answer for the advertisement question
         if (company.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
             alert('Incorrect answer for the advertisement question.');
             return;
@@ -38,5 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(error => {
             alert('Oops! There was a problem with your submission.');
         });
+    });
+
+    // Logic to enable the submit button after the video ends
+    const videoIframe = document.querySelector('iframe');
+    videoIframe.addEventListener('load', () => {
+        const videoPlayer = videoIframe.contentWindow.document;
+        const video = videoPlayer.querySelector('video');
+
+        if (video) {
+            video.addEventListener('ended', () => {
+                submitButton.disabled = false;
+                alert('Thank you for watching the video. You can now submit the form.');
+            });
+        } else {
+            submitButton.disabled = false; // Enable the button if the video element is not found
+        }
     });
 });
