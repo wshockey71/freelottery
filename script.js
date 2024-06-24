@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Oops! There was a problem with your submission.');
             }
         }).catch(error => {
+            console.error('Error:', error);
             alert('Oops! There was a problem with your submission.');
         });
     });
