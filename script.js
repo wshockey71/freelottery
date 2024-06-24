@@ -4,9 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = form.querySelector('button[type="submit"]');
 
     // Enable the submit button after the video ends
-    video.addEventListener('ended', () => {
-        submitButton.disabled = false;
-        alert('Thank you for watching the video. You can now submit the form.');
+    video.addEventListener('load', () => {
+        // Attach event listener after video is loaded
+        video.contentWindow.postMessage('{"event":"listening","id":1,"channel":"widget"}', '*');
+    });
+
+    window.addEventListener('message', (event) => {
+        const data = JSON.parse(event.data);
+        if (data.event === 'infoDelivery' && data.info && data.info.playerState === 0) { // 0 means ended
+            submitButton.disabled = false;
+            alert('Thank you for watching the video. You can now submit the form.');
+        }
     });
 
     // Handle form submission
