@@ -1,61 +1,75 @@
-<!DO<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Giveaway - Enter and Win $100</title>
+    <title>Free Lottery - Enter and Win Exciting Prizes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Free Giveaway</h1>
+        <div class="container">
+            <h1>Free Giveaway</h1>
+        </div>
     </header>
     <main>
-        <section id="home">
-            <h2>Enter Our Free Giveaway for $100</h2>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h2>Enter Our Free Giveaway for $100</h2>
+                <p>Participate in our free giveaway and stand a chance to win amazing prizes. Follow the instructions below to enter:</p>
+                <ol>
+                    <li>Watch the video and answer the question.</li>
+                    <li>Fill out the entry form with your details.</li>
+                    <li>Submit the form and stay tuned for the results!</li>
+                </ol>
+            </div>
         </section>
-        <section id="video">
-            <h2>Watch This Video and Answer the Questions Below to Enter</h2>
-            <video id="filler-video" width="640" height="360" controls>
-                <source src="https://www.dropbox.com/s/ryfehj6sim3mo355x8gdi/new_ad.mp4?dl=1" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>                       
+        <section id="video" class="content-section">
+            <div class="container">
+                <h2>Watch This Video and Answer the Questions Below to Enter</h2>
+                <video id="filler-video" width="640" height="360" controls>
+                    <source src="https://dl.dropboxusercontent.com/s/ryfehj6sim3mo355x8gdi/new_ad.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
-        <section id="contact">
-            <h2>Enter Form</h2>
-            <p>If you do not get the first question right, you will not be entered.</p>
-            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxBsgOMsDNc8YCxRRmebu8e7YXzYmU9F4gaVgTbA7m2NVg5z7Pn5tJaIf83DoCrjcFB3w/exec" method="POST">
-                <label for="company">What company was the advertisement for?</label>
-                <select id="company" name="company" required>
-                    <option value="">Select an option</option>
-                    <option value="Coke">Coke</option>
-                    <option value="Pepsi">Pepsi</option>
-                    <option value="Sprite">Sprite</option>
-                    <option value="Fanta">Fanta</option>
-                </select>
-                <br>
-                <label for="ad-feedback">Did you like the ad?</label>
-                <select id="ad-feedback" name="ad-feedback" required>
-                    <option value="">Select an option</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
-                <br>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <button type="submit" disabled>Submit</button>
-            </form>
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2>Enter Form</h2>
+                <p>If you do not get the first question right you will not be entered.</p>
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxBsgOMsDNc8YCxRRmebu8e7YXzYmU9F4gaVgTbA7m2NVg5z7Pn5tJaIf83DoCrjcFB3w/exec" method="POST">
+                    <label for="ad-company">What company was the advertisement for?</label>
+                    <select id="ad-company" name="ad-company" required>
+                        <option value="Coke">Coke</option>
+                        <option value="Pepsi">Pepsi</option>
+                        <option value="Sprite">Sprite</option>
+                        <option value="Fanta">Fanta</option>
+                    </select>
+                    <br>
+                    <label for="ad-liked">Did you like the ad?</label>
+                    <select id="ad-liked" name="ad-liked" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <br>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Free Lottery. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Free Lottery. All rights reserved.</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
