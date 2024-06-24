@@ -9,19 +9,21 @@
 <body>
     <header>
         <div class="container">
-            <h1>Free Giveaway</h1>
+            <h1>Free Lottery</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>
         <section id="home" class="hero-section">
             <div class="container">
                 <h2>Enter Our Free Giveaway for $100</h2>
-                <p>Participate in our free giveaway and stand a chance to win amazing prizes. Follow the instructions below to enter:</p>
-                <ol>
-                    <li>Watch the video and answer the question.</li>
-                    <li>Fill out the entry form with your details.</li>
-                    <li>Submit the form and stay tuned for the results!</li>
-                </ol>
+                <p>Participate in our free giveaway and stand a chance to win amazing prizes. Follow the instructions below to enter.</p>
             </div>
         </section>
         <section id="video" class="content-section">
@@ -36,20 +38,22 @@
         <section id="contact" class="content-section">
             <div class="container">
                 <h2>Enter Form</h2>
-                <p>If you do not get the first question right you will not be entered.</p>
+                <p>If you do not get the first question right, you will not be entered.</p>
                 <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxBsgOMsDNc8YCxRRmebu8e7YXzYmU9F4gaVgTbA7m2NVg5z7Pn5tJaIf83DoCrjcFB3w/exec" method="POST">
-                    <label for="ad-company">What company was the advertisement for?</label>
-                    <select id="ad-company" name="ad-company" required>
+                    <label for="company">What company was the advertisement for?</label>
+                    <select id="company" name="company" required>
+                        <option value="">Select an option</option>
                         <option value="Coke">Coke</option>
                         <option value="Pepsi">Pepsi</option>
                         <option value="Sprite">Sprite</option>
                         <option value="Fanta">Fanta</option>
                     </select>
                     <br>
-                    <label for="ad-liked">Did you like the ad?</label>
-                    <select id="ad-liked" name="ad-liked" required>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                    <label for="ad-feedback">Did you like the ad?</label>
+                    <select id="ad-feedback" name="ad-feedback" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                     </select>
                     <br>
                     <label for="name">Full Name:</label>
@@ -61,7 +65,7 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                     <br>
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled>Submit</button>
                 </form>
             </div>
         </section>
