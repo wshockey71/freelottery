@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }).then(response => {
             if (response.ok) {
-                alert('Thank you for your submission!');
+                alert('Thank you for your submission! Winners will be notified via email on July 3rd.');
                 form.reset();
                 submitButton.disabled = true;  // Re-disable the submit button
             } else {
