@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = form.querySelector('button[type="submit"]');
     let player;
 
-    // This function creates an <iframe> (and YouTube player)
-    // after the API code downloads.
     window.onYouTubeIframeAPIReady = function() {
         player = new YT.Player('filler-video', {
             events: {
@@ -13,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // The API will call this function when the player's state changes.
     function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.ENDED) {
             submitButton.disabled = false;
@@ -21,14 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Handle form submission
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
+        // Disable the submit button to prevent multiple submissions
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
         const company = document.getElementById('company').value;
-        const correctAnswer = 'Coke'; // Correct answer for the advertisement question
+        const correctAnswer = 'Coke';
         if (company.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
             alert('Incorrect answer for the advertisement question.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
             return;
         }
 
@@ -43,12 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 alert('Thank you for your submission! Winners will receive an email on July 3rd.');
                 form.reset();
-                submitButton.disabled = true;  // Re-disable the submit button
+                submitButton.textContent = 'Submit';
             } else {
-                alert('Oops! There was a problem with your submission.');
+                return response.json().then(data => {
+                    alert(`Oops! There was a problem with your submission. ${data.result}`);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit';
+                });
             }
         }).catch(error => {
+            console.error('Error:', error);
             alert('Oops! There was a problem with your submission.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
         });
     });
 });
