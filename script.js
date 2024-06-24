@@ -3,6 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = form.querySelector('button[type="submit"]');
     const correctAnswer = 'Coke'; // Correct answer for the advertisement question
 
+    // Function to enable the submit button
+    const enableSubmitButton = () => {
+        submitButton.disabled = false;
+        alert('Thank you for watching the video. You can now submit the form.');
+    };
+
+    // Listen for video end event within the iframe
+    const videoIframe = document.querySelector('iframe');
+    if (videoIframe) {
+        videoIframe.addEventListener('load', () => {
+            const player = new YT.Player(videoIframe, {
+                events: {
+                    'onStateChange': (event) => {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            enableSubmitButton();
+                        }
+                    }
+                }
+            });
+        });
+    }
+
     // Handle form submission
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -31,21 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(error => {
             alert('Oops! There was a problem with your submission.');
         });
-    });
-
-    // Logic to enable the submit button after the video ends
-    const videoIframe = document.querySelector('iframe');
-    videoIframe.addEventListener('load', () => {
-        const videoPlayer = videoIframe.contentWindow.document;
-        const video = videoPlayer.querySelector('video');
-
-        if (video) {
-            video.addEventListener('ended', () => {
-                submitButton.disabled = false;
-                alert('Thank you for watching the video. You can now submit the form.');
-            });
-        } else {
-            submitButton.disabled = false; // Enable the button if the video element is not found
-        }
     });
 });
