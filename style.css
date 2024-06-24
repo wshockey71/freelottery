@@ -60,7 +60,7 @@ header nav ul li a:hover {
 
 /* Hero Section Styles */
 .hero-section {
-    background: url('images/hero1.ppg') no-repeat center center/cover;
+    background: url('images/hero1.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
