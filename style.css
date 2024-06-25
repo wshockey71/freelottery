@@ -59,25 +59,36 @@ header nav ul li a:hover {
 
 /* Hero Section Styles */
 .hero-section {
-    background: url('images/hero1.png') no-repeat center center/cover;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    height: 100vh;
     text-align: center;
     padding-top: 80px; /* To offset fixed header */
+    background: #e0f7fa;
 }
 
-.hero-section h2 {
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-image {
+    width: 80%;
+    max-width: 400px;
+}
+
+.hero-text h2 {
     font-size: 2.5em;
-    margin: 0 0 20px 0;
+    margin: 20px 0 10px 0;
 }
 
-.hero-section p {
+.hero-text p {
     font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* Content Section Styles */
@@ -175,11 +186,25 @@ main {
         display: block;
     }
 
-    .hero-section h2 {
+    .hero-section {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-text h2 {
         font-size: 1.8em;
     }
 
-    .hero-section p {
+    .hero-text p {
         font-size: 1em;
     }
 
