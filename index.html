@@ -11,7 +11,12 @@
         <div class="container">
             <h1>Friveaway</h1>
             <nav>
-                <ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav no-search">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#video">Video</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -21,8 +26,8 @@
     </header>
     <main>
         <section id="home" class="hero-section">
-            <div class="container hero-content">
-                <img src="images/hero1.png" alt="Giveaway Banner" class="hero-image">
+            <div class="container">
+                <img src="images/hero1.png" alt="Hero Image" class="hero-image">
             </div>
         </section>
         <section id="video" class="content-section">
@@ -81,5 +86,15 @@
     </footer>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('mobile-menu');
+            const nav = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
