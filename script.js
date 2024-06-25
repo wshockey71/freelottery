@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = form.querySelector('button[type="submit"]');
     let player;
 
+    // Menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
     window.onYouTubeIframeAPIReady = function() {
         player = new YT.Player('filler-video', {
             events: {

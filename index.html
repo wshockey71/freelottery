@@ -10,13 +10,9 @@
     <header>
         <div class="container">
             <h1>Friveaway</h1>
-            <nav>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav no-search">
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#video">Video</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -40,7 +36,7 @@
             <div class="container">
                 <h2>Enter Form</h2>
                 <p>If you do not get the first question right, you will not be entered.</p>
-                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxBsgOMsDNc8YCxRRmebu8e7YXzYmU9F4gaVgTbA7m2NVg5z7Pn5tJaIf83DoCrjcFB3w/exec" method="POST">
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbx_dkrvla6cXezi9eAh9kADKb9UW0X7kMAoBkQit_Z4cfDUymWRVdb5h5frFl6mXlgO1w/exec" method="POST">
                     <label for="company">What company was the advertisement for?</label>
                     <select id="company" name="Company" required>
                         <option value="">Select an option</option>
@@ -86,15 +82,5 @@
     </footer>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('mobile-menu');
-            const nav = document.querySelector('nav ul');
-
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('show');
-            });
-        });
-    </script>
 </body>
 </html>
