@@ -17,7 +17,7 @@ body {
 header {
     background-color: #000;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0; /* Reduced padding */
     position: fixed;
     width: 100%;
     top: 0;
@@ -32,7 +32,7 @@ header .container {
 
 header h1 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.2em; /* Reduced font size */
 }
 
 header nav ul {
@@ -40,7 +40,7 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
 }
 
 header nav ul li {
@@ -64,7 +64,7 @@ header nav ul li a:hover {
     justify-content: center;
     height: 100vh;
     text-align: center;
-    padding-top: 80px; /* To offset fixed header */
+    padding-top: 60px; /* Adjusted to match the reduced header height */
     background: #e0f7fa;
 }
 
@@ -161,7 +161,7 @@ footer {
 
 /* Adjust padding for fixed header */
 main {
-    padding-top: 80px;
+    padding-top: 60px; /* Adjusted to match the reduced header height */
 }
 
 /* Mobile Styles */
