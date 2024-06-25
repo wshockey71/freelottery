@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let player;
 
     // Menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
+    const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show-nav');
     });
 
     window.onYouTubeIframeAPIReady = function() {
