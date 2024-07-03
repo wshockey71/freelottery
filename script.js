@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = 'Submitting...';
 
         const company = document.getElementById('company').value;
-        const correctAnswer = 'Coke';
+        const correctAnswer = 'Apple';
         if (company.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
             alert('Incorrect answer for the advertisement question.');
             submitButton.disabled = false;
