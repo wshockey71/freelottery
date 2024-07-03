@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let player;
 
     // Menu toggle
-    const navToggle = document.getElementById('nav-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show-nav');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
 
     window.onYouTubeIframeAPIReady = function() {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const formData = new FormData(form);
-        fetch('https://script.google.com/macros/s/AKfycbyMrnn6RQBKgYGkmE80G3u6FhUVKrHT10xDs-rR9gNQcxdaHTXFj2N6N4HA76_NvE6c/exec', {
+        fetch(form.action, {
             method: 'POST',
             body: formData,
             headers: {
