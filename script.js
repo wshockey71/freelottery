@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = 'Submitting...';
 
         const company = document.getElementById('company').value;
-        const correctAnswer = 'Apple';
+        const correctAnswer = 'Snickers';
         if (company.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
             alert('Incorrect answer for the advertisement question.');
             submitButton.disabled = false;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }).then(response => {
             if (response.ok) {
-                alert('Thank you for your submission! Winners will receive an email on July 3rd.');
+                alert('Thank you for your submission! Winners will receive an email on July 17th.');
                 form.reset();
                 submitButton.textContent = 'Submit';
             } else {
